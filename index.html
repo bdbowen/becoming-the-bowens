@@ -21,14 +21,12 @@
       numberOfPeople = value;
       document.getElementById('text').href = document.getElementById('text').href.replace('{numberOfPeople}', numberOfPeople);
       document.getElementById('email').href = document.getElementById('email').href.replace('{numberOfPeople}', numberOfPeople);
-      debugger;
     }
 
     function setName(value) {
       name = value;
       document.getElementById('text').href = document.getElementById('text').href.replace('{name}', name);
       document.getElementById('email').href = document.getElementById('email').href.replace('{name}', name);
-      debugger;
     }
   </script>
 </head>
@@ -55,20 +53,27 @@ h1 {
   margin-right: auto;
   width: 75%;
 }
+
+.vertical-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 </style>
 <body>
   <h1>Brian Bowen and Kelsey Stang</h1>
   <div class="row">
-    <div class="col-sm-12 col-md-4">
+    <div class="col-sm-12 col-md-3 vertical-center">
       <p><strong>Wedding Location:</strong><br>
       River Valley Christian Fellowship<br>
       800 Cardinal Drive<br>
       Bourbonnais, IL, 60914</p>
     </div>
-    <div class="col-sm-12 col-md-4">
+    <div class="col-sm-12 col-md-6">
     <img src="./mainPic.JPG" class="image">
     </div>
-    <div class="col-sm-12 col-md-4">
+    <div class="col-sm-12 col-md-3 vertical-center">
       <p><strong>Reception Location:</strong><br>
       Kankakee Civic Center<br>
       803 S 8th Avenue<br>
@@ -85,7 +90,7 @@ h1 {
       <label for="number">Number in Household Attending:</label>
       <input type="number" id="number" onchange="setNumber(this.value)"><br>
       <br>
-    <a href='mailto:bdbowen@olivet.edu?body=I would like to RSVP for the wedding of Brian Bowen and Kelsey Stang on the date of May 22, 2021. My name is #{name} and I have #{numberOfPeople} people coming from my household.&subject=Wedding RSVP' onclick="return checkRSVP('email')" id="email">RSVP Email</a><br>
+    <a href='mailto:bdbowen@olivet.edu?body=I would like to RSVP for the wedding of Brian Bowen and Kelsey Stang on the date of May 22, 2021. My name is {name} and I have {numberOfPeople} people coming from my household.&subject=Wedding RSVP' onclick="return checkRSVP('email')" id="email">RSVP Email</a><br>
     <a href='tel:6182145585'>RSVP by Phone</a><br>
     <a href='sms:1-618-214-5585&body=I would like to RSVP for your wedding. My name is {name} and {numberOfPeople} people from my household are coming with me.' onclick="return checkRSVP('text')" id="text">RSVP by Text</p><br>
     </p>

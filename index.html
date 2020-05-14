@@ -7,7 +7,6 @@
     var numberOfPeople = null;
 
     function checkRSVP() {
-      debugger;
       if (!name || !numberOfPeople) {
         alert("You must fill out your name and number of people in order to send an RSVP!");
         return false;
@@ -19,6 +18,10 @@
     }
 
     function setName(value) {
+      if (isNaN(value)) {
+        alert("Must be a number!");
+        return;
+      }
       name = value;
     }
   </script>
@@ -74,11 +77,11 @@ h1 {
       <label for="name">Name:</label>
       <input type="text" id="name" onchange="setName(this.value)"><br>
       <label for="number">Number in Household Attending:</label>
-      <input type="text" id="number" onchange="setNumber(this.value)"><br>
+      <input type="number" id="number" onchange="setNumber(this.value)"><br>
       <br>
-    <a href='mailto:bdbowen@olivet.edu?body=I would like to RSVP for the wedding of Brian Bowen and Kelsey Stang on the date of May 22, 2021. My name is ______ and I have ________ people coming from my household.&subject=Wedding RSVP' onclick="return checkRSVP()">RSVP Email</a><br>
+    <a href='mailto:bdbowen@olivet.edu?body=I would like to RSVP for the wedding of Brian Bowen and Kelsey Stang on the date of May 22, 2021. My name is #{name} and I have #{numberOfPeople} people coming from my household.&subject=Wedding RSVP' onclick="return checkRSVP()">RSVP Email</a><br>
     <a href='tel:6182145585'>RSVP by Phone</a><br>
-    <a href='sms:1-618-214-5585&body=I would like to RSVP for your wedding. My name is ____ and _______ people from my household are coming with me.' onclick="return checkRSVP()">RSVP by Text</p><br>
+    <a href='sms:1-618-214-5585&body=I would like to RSVP for your wedding. My name is #{name} and #{numberOfPeople} people from my household are coming with me.' onclick="return checkRSVP()">RSVP by Text</p><br>
     </p>
 </body>
 </html>

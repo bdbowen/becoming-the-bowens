@@ -11,6 +11,7 @@
         alert("You must fill out your name and number of people in order to send an RSVP!");
         return false;
       }
+      document.getElementById(id).href = document.getElementById(id).href.replace('#{name}', name).replace('#{number}', numberOfPeople);
       debugger;
     }
 

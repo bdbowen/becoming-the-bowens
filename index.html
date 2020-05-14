@@ -19,15 +19,15 @@
         return;
       }
       numberOfPeople = value;
-      document.getElementById('text').href = document.getElementById('text').href.replace('#{numberOfPeople}', numberOfPeople);
-      document.getElementById('email').href = document.getElementById('email').href.replace('#{numberOfPeople}', numberOfPeople);
+      document.getElementById('text').href = document.getElementById('text').href.replace('{numberOfPeople}', numberOfPeople);
+      document.getElementById('email').href = document.getElementById('email').href.replace('{numberOfPeople}', numberOfPeople);
       debugger;
     }
 
     function setName(value) {
       name = value;
-      document.getElementById('text').href = document.getElementById('text').href.replace('#{name}', name);
-      document.getElementById('email').href = document.getElementById('email').href.replace('#{name}', name);
+      document.getElementById('text').href = document.getElementById('text').href.replace('{name}', name);
+      document.getElementById('email').href = document.getElementById('email').href.replace('{name}', name);
       debugger;
     }
   </script>
@@ -87,7 +87,7 @@ h1 {
       <br>
     <a href='mailto:bdbowen@olivet.edu?body=I would like to RSVP for the wedding of Brian Bowen and Kelsey Stang on the date of May 22, 2021. My name is #{name} and I have #{numberOfPeople} people coming from my household.&subject=Wedding RSVP' onclick="return checkRSVP('email')" id="email">RSVP Email</a><br>
     <a href='tel:6182145585'>RSVP by Phone</a><br>
-    <a href='sms:1-618-214-5585&body=I would like to RSVP for your wedding. My name is #{name} and #{numberOfPeople} people from my household are coming with me.' onclick="return checkRSVP('text')" id="text">RSVP by Text</p><br>
+    <a href='sms:1-618-214-5585&body=I would like to RSVP for your wedding. My name is {name} and {numberOfPeople} people from my household are coming with me.' onclick="return checkRSVP('text')" id="text">RSVP by Text</p><br>
     </p>
 </body>
 </html>

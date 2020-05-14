@@ -2,6 +2,18 @@
 <html>
 <head>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script>
+    var name = null;
+    var numberOfPeople = null;
+
+    function checkRSVP() {
+      if (name == null || numberOfPeople == null) {
+        alert("You must fill out your name and number of people in order to send an RSVP!");
+        return false;
+      }
+
+    }
+  </script>
 </head>
 <style>
 body {
@@ -48,12 +60,16 @@ h1 {
       </p>
     </div>
   </div>
-    <p>Thank you for showing interest in our big day!<br>
       <span class="date">22 May 2021</span>
       <br>
-    <a href='mailto:bdbowen@olivet.edu?body=I would like to RSVP for the wedding of Brian Bowen and Kelsey Stang on the date of May 22, 2021. My name is ______ and I have ________ people coming from my household.&subject=Wedding RSVP'>RSVP Email</a>
-    <a href='tel:6182145585'>RSVP by Phone</a>
-    <a href='sms:1-618-214-5585&body=I would like to RSVP for your wedding. My name is ______ and _____ people from my household are coming with me.'>RSVP by Text</p>
+      <label for="name">Name:</label>
+      <input type="text" id="name"><br>
+      <label for="number">Number in Household Attending:</label>
+      <input type="text" id="number"><br>
+      <br>
+    <a href='mailto:bdbowen@olivet.edu?body=I would like to RSVP for the wedding of Brian Bowen and Kelsey Stang on the date of May 22, 2021. My name is ______ and I have ________ people coming from my household.&subject=Wedding RSVP' onclick="return checkRSVP()">RSVP Email</a><br>
+    <a href='tel:6182145585'>RSVP by Phone</a><br>
+    <a href='sms:1-618-214-5585&body=I would like to RSVP for your wedding. My name is ____ and _______ people from my household are coming with me.' onclick="return checkRSVP()">RSVP by Text</p><br>
     </p>
 </body>
 </html>

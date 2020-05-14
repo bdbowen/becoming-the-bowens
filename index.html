@@ -7,7 +7,7 @@
     var numberOfPeople = null;
 
     function checkRSVP() {
-      if (name == null || numberOfPeople == null) {
+      if (name || numberOfPeople) {
         alert("You must fill out your name and number of people in order to send an RSVP!");
         return false;
       }

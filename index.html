@@ -11,7 +11,14 @@
         alert("You must fill out your name and number of people in order to send an RSVP!");
         return false;
       }
+    }
 
+    function setNumber(value) {
+      numberOfPeople = value;
+    }
+
+    function setName(value) {
+      name = value;
     }
   </script>
 </head>
@@ -63,9 +70,9 @@ h1 {
       <span class="date">22 May 2021</span>
       <br>
       <label for="name">Name:</label>
-      <input type="text" id="name"><br>
+      <input type="text" id="name" onchange="setName(this.value)"><br>
       <label for="number">Number in Household Attending:</label>
-      <input type="text" id="number"><br>
+      <input type="text" id="number" onchange="setNumber(this.value)"><br>
       <br>
     <a href='mailto:bdbowen@olivet.edu?body=I would like to RSVP for the wedding of Brian Bowen and Kelsey Stang on the date of May 22, 2021. My name is ______ and I have ________ people coming from my household.&subject=Wedding RSVP' onclick="return checkRSVP()">RSVP Email</a><br>
     <a href='tel:6182145585'>RSVP by Phone</a><br>

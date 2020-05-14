@@ -11,8 +11,6 @@
         alert("You must fill out your name and number of people in order to send an RSVP!");
         return false;
       }
-      document.getElementById(id).href = document.getElementById(id).href.replace('#{name}', name).replace('#{number}', numberOfPeople);
-      debugger;
     }
 
     function setNumber(value) {
@@ -21,10 +19,14 @@
         return;
       }
       numberOfPeople = value;
+      document.getElementById('text').href = document.getElementById('text').href.replace('#{number}', numberOfPeople);
+      document.getElementById('email').href = document.getElementById('email').href.replace('#{number}', numberOfPeople);
     }
 
     function setName(value) {
       name = value;
+      document.getElementById('text').href = document.getElementById('text').href.replace('#{name}', name);
+      document.getElementById('email').href = document.getElementById('email').href.replace('#{name}', name);
     }
   </script>
 </head>
